@@ -12,10 +12,10 @@ svg{
 }
 
 .box-visible{
-	width: 300px;
-	height: 300px;
+	width: 150px;
+	height: 150px;
 	border: 1px solid #cccccc;
 	background-color: #cccccc;
-	opacity: 0.5;
+	opacity: 0.8;
 	border-radius: 5px;
 }
