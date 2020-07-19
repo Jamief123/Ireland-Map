@@ -3,8 +3,9 @@ path:hover{
 }
 
 #map{
+	width: 60%;
 	display: block;
-	margin: 0 0;
+	float: left;
 }
 
 svg{
@@ -18,4 +19,15 @@ svg{
 	background-color: #cccccc;
 	opacity: 0.8;
 	border-radius: 5px;
+}
+
+#fire_selector_box{
+	width: 30%;
+	float: right;
+}
+li{
+	list-style-type: none;
+}
+a{
+	text-decoration: None;
 }
