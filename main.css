@@ -1,15 +1,19 @@
+*{
+	font-family: 'Roboto', sans-serif;
+}
 path:hover{
 	fill: green;
 }
 
 #map{
-	width: 60%;
+	width: 1000px;
 	display: block;
-	float: left;
+	margin: 20px auto;
 }
 
 svg{
 	margin: 0 auto;
+	width: 1000px;
 }
 
 .box-visible{
@@ -21,13 +25,37 @@ svg{
 	border-radius: 5px;
 }
 
-#fire_selector_box{
+/* #fire_selector_box{
 	width: 30%;
 	float: right;
-}
+} */
 li{
 	list-style-type: none;
 }
 a{
 	text-decoration: None;
+}
+
+#fire_selector_box button{
+	border-radius: 1rem;
+	margin: 10px;
+	font-size: large;
+}
+
+#fire_selector_box li{
+	display: inline;
+}
+
+#selected_fire{
+	background-color: #B794F6;
+	border-radius: 1rem;
+	width: 300px;
+	padding: 3px;
+	margin: 0 auto;
+	font-size: large;
+}
+
+header h1{
+	margin: 20px auto 0 auto;
+	width: 500px;
 }

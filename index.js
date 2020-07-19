@@ -16,6 +16,7 @@ var fire_types = Object.keys(country_data[0]).splice(1, 14);
 createFireSelectionBox(fire_types);
 
 var selected_fire_type = fire_types[0];
+document.getElementById('selected_fire').textContent = fire_types[0];
 function createFireSelectionBox(fire_types){
 
 	fire_types.forEach( (fire_type) => {
@@ -23,7 +24,10 @@ function createFireSelectionBox(fire_types){
 		var li = document.createElement("li");
 
 		b.textContent = fire_type;
-		b.onclick = () => {selected_fire_type = fire_type; alert(fire_type);}
+		b.onclick = () => { 
+			selected_fire_type = fire_type; 
+			document.getElementById('selected_fire').textContent = selected_fire_type;
+		}
 		li.appendChild(b);
 		document.getElementById("fire_selector").appendChild(li);
 });
