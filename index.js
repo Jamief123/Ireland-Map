@@ -11,12 +11,13 @@ var country_data = httpGet(url);
 
 // Get fire types to create selection box to allow user to select fire type
 var fire_types = Object.keys(country_data[0]).splice(1, 14);
-//console.log(fire_types);
 
 createFireSelectionBox(fire_types);
 
+// set the default selected fire type
 var selected_fire_type = fire_types[0];
-document.getElementById('selected_fire').textContent = fire_types[0];
+var selected_button = null;
+
 function createFireSelectionBox(fire_types){
 
 	fire_types.forEach( (fire_type) => {
@@ -25,8 +26,12 @@ function createFireSelectionBox(fire_types){
 
 		b.textContent = fire_type;
 		b.onclick = () => { 
+			if(selected_button != null){
+				selected_button.classList.remove('selected_button');
+			}
 			selected_fire_type = fire_type; 
-			document.getElementById('selected_fire').textContent = selected_fire_type;
+			b.classList.add('selected_button');
+			selected_button = b;
 		}
 		li.appendChild(b);
 		document.getElementById("fire_selector").appendChild(li);
@@ -72,18 +77,19 @@ function createFireSelectionBox(fire_types){
 	
 	var paths = document.querySelectorAll("path");
 	for (var i = 0 ; i < paths.length; i++) {
-		this.addEventListener('mouseover' , displayData);
+		this.addEventListener('mousemove' , displayData);
 }
 	
 function displayData(e){
     if(typeof counties[e.target.id] != "undefined"){
-        console.log(counties[e.target.id]);
-        console.log("X: %s Y: %s", e.x, e.y+1000);
+        //console.log(counties[e.target.id]);
+        //console.log("X: %s Y: %s", e.x, e.y+1000);
 
         var d = document.getElementById('box');
         d.style.position = "absolute";
-        d.style.left = e.x+'px';
-        d.style.top = e.y+'px';
+        d.style.left = e.clientX + 10 + "px";
+		d.style.top = e.clientY + 20 + "px";
+		console.log("X: %s Y: %s", e.clientX, e.clientY+100);
         d.classList.add("box-visible");
         
         var county = {};

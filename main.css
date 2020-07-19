@@ -37,6 +37,7 @@ a{
 }
 
 #fire_selector_box button{
+	outline: none;
 	border-radius: 1rem;
 	margin: 10px;
 	font-size: large;
@@ -46,16 +47,24 @@ a{
 	display: inline;
 }
 
-#selected_fire{
+/* #selected_fire{
 	background-color: #B794F6;
 	border-radius: 1rem;
 	width: 300px;
 	padding: 3px;
 	margin: 0 auto;
 	font-size: large;
-}
+} */
 
 header h1{
 	margin: 20px auto 0 auto;
 	width: 500px;
+}
+
+footer{
+	font-size: smaller;
+}
+
+.selected_button{
+	background-color: royalblue;
 }
